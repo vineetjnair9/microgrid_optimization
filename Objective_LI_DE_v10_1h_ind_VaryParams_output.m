@@ -2,6 +2,7 @@ function [Costs, DE_hours, BS_cycles] = Objective_LI_DE_v10_1h_ind_VaryParams_ou
 % Outputs individual objective values instead of weighted multiobjective
 % Also used for pareto set/front calculation
 % Returns normalized LCOE/emissions, DPSP, Dump and REF
+% Updated Dec 2025
 
 % Function performs optimal dispatch to output overall weighted cost function that needs to be minimized
 % Variable inputs (that we minimize w.r.t) are: 

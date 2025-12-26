@@ -2,6 +2,7 @@ function [Costs, cost, soc_LI, DPSP, P_dump, P_lost, P_load, P_w, P_s, P_RES] = 
 % Optimal dispatch of DE and BS on a day-ahead basis - Using inbuilt MATLAB solvers
 % Initial attempt: No MPC, static optimization over finite horizon based on certain/known historical load/climate data i.e. similar to LQR
 % But in reality, need some form of receding horizon MPC since controller doesn't have access to future climate/load data!
+% Updated Dec 2025
 
 % Assuming that any excess DE power cannot go towards charging battery
 % i.e. purpose of DE is only to serve as backup to meet excess load

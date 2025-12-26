@@ -1,5 +1,6 @@
 %% Using - solve Constrained Nonlinear Optimization, Problem-Based
 % https://uk.mathworks.com/help/optim/ug/solve-constrained-nonlinear-optimization-problem-based.html
+% Updated Dec 2025
 
 dim = 24*3;
 SOC_initial = linspace(0.1,0.9,9);

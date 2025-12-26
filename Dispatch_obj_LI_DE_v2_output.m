@@ -1,5 +1,6 @@
 function [Costs, DE_hours, BS_cycles] = Dispatch_obj_LI_DE_v2_output(P_DE, P_b_LI)
 % Outputs individual objectives
+% Updated Dec 2025
 
 % Assuming that any excess DE power cannot go towards charging battery
 % i.e. purpose of DE is only to serve as backup to meet excess load

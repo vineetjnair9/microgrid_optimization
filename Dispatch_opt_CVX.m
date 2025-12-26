@@ -1,6 +1,7 @@
 % Optimal dispatch of DE and BS on a day-ahead basis - Using CVX
 % Initial attempt: No MPC, static optimization over finite horizon i.e. similar to LQR
 % But in reality, need some form of receding horizon MPC since controller doesn't have access to future climate/load data!
+% Updated Dec 2025
 
 % Assuming that any excess DE power cannot go towards charging battery
 

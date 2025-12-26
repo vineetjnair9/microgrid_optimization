@@ -1,5 +1,6 @@
 function [cost, soc_LI, DPSP] = Dispatch_obj_LI_DE_no_DR_parallel(P_DE, P_b_LI)
 % Using parallel computing toolbox to speed up calculations
+% Updated Dec 2025
 
 % Optimal dispatch of DE and BS on a day-ahead basis - Using inbuilt MATLAB solvers
 % Initial attempt: No MPC, static optimization over finite horizon based on certain/known historical load/climate data i.e. similar to LQR

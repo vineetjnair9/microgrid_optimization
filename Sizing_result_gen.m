@@ -1,6 +1,7 @@
 %% Plotting out objective function - using Prated
 % For various values of inputs -  to show local minima
 % Assuming 5 equal weights
+% Updated Dec 2025
 
 Ps_rated_total = 0:1:25; 
 Pw_rated_total = 0:1:25;
