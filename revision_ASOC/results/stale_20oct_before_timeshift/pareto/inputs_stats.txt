@@ -1,0 +1,8 @@
+N_WT0 = 157
+N = 200
+PV_min = 21.2
+PV_max = 102.0
+EB_min = 66.0
+EB_max = 400.0
+N_EB400 = 78
+WT_max = 21.0

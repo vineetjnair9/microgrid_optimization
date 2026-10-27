@@ -1,0 +1,66 @@
+=== J009a_benchmark_main_retry start 19-Oct-2026 16:01:23
+PSO    seed  1  J_cont=0.083975 J_int=0.091404 x_int=[11 5 121.28] evals=1992 t=3.87s
+GA     seed  1  J_cont=0.086647 J_int=0.088056 x_int=[0 5 111.84] evals=2002 t=3.64s
+SA     seed  1  J_cont=0.087259 J_int=0.088194 x_int=[26 4 97.81] evals=1962 t=3.77s
+SO     seed  1  J_cont=0.084153 J_int=0.091210 x_int=[10 5 116.74] evals=1980 t=34.81s
+MS     seed  1  J_cont=0.086188 J_int=0.091911 x_int=[15 4 105.00] evals=1985 t=3.52s
+GS     seed  1  J_cont=0.084917 J_int=0.092324 x_int=[12 5 96.94] evals=1983 t=3.77s
+DPS    seed  1  J_cont=0.084054 J_int=0.091980 x_int=[11 5 111.45] evals=1988 t=3.55s
+PSOPS  seed  1  J_cont=0.083991 J_int=0.091209 x_int=[10 5 116.73] evals=1829 t=3.14s
+PSO    seed  2  J_cont=0.084943 J_int=0.089757 x_int=[6 5 114.30] evals=1979 t=3.40s
+GA     seed  2  J_cont=0.087371 J_int=0.091637 x_int=[7 5 133.00] evals=2001 t=3.35s
+SA     seed  2  J_cont=0.087779 J_int=0.088274 x_int=[28 4 98.00] evals=1987 t=3.44s
+SO     seed  2  J_cont=0.085181 J_int=0.091995 x_int=[11 5 101.51] evals=1984 t=29.37s
+MS     seed  2  J_cont=0.090967 J_int=0.091563 x_int=[27 4 143.37] evals=1981 t=3.49s
+GS     seed  2  J_cont=0.090789 J_int=0.091775 x_int=[19 4 124.16] evals=1985 t=3.49s
+DPS    seed  2  J_cont=0.084919 J_int=0.091243 x_int=[9 5 95.06] evals=1981 t=3.45s
+PSOPS  seed  2  J_cont=0.084943 J_int=0.089757 x_int=[6 5 114.30] evals=1808 t=3.04s
+PSO    seed  3  J_cont=0.083829 J_int=0.090354 x_int=[17 4 83.75] evals=1983 t=3.39s
+GA     seed  3  J_cont=0.086750 J_int=0.090977 x_int=[8 5 121.02] evals=1994 t=3.38s
+SA     seed  3  J_cont=0.086282 J_int=0.088758 x_int=[28 4 94.95] evals=1990 t=3.48s
+SO     seed  3  J_cont=0.085695 J_int=0.088985 x_int=[2 5 112.17] evals=1989 t=33.87s
+{Operation terminated by user during <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('obj_sizing', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/obj_sizing.m', 428)" style="font-weight:bold">obj_sizing</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/obj_sizing.m',428,0)">line 428</a>)
+
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed>@(x)obj_sizing(x,p,data)', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 10)" style="font-weight:bold">benchmark_multiseed>@(x)obj_sizing(x,p,data)</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',10,0)">line 10</a>)
+  f = @(x) obj_sizing(x, p, data);
+           ^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed/run_one/fw', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 77)" style="font-weight:bold">benchmark_multiseed/run_one/fw</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',77,0)">line 77</a>)
+      y = f(x); nev = nev + 1; if ~isfinite(y), y = 10; end   % guard (objective is normally in [0,1])
+          ^^^^
+In finDiffEvalAndChkErr
+
+In finitedifferences
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('nlconst', '/Applications/MATLAB_R2026a.app/toolbox/shared/optimlib/nlconst.m', 316)" style="font-weight:bold">nlconst</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/shared/optimlib/nlconst.m',316,0)">line 316</a>)
+                        finitedifferences(XOUT,funfcn{3},confcn{3},lb,ub,f, ...
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('fmincon', '/Applications/MATLAB_R2026a.app/toolbox/shared/optimlib/fmincon.m', 474)" style="font-weight:bold">fmincon</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/shared/optimlib/fmincon.m',474,0)">line 474</a>)
+            nlconst(funfcn,X,l,u,full(A),B,full(Aeq),Beq,confcn,options,defaultopt, ...
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In globaloptim.multistart.fmultistart
+
+In globaloptim.multistart.fmultistart
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('MultiStart/run', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/MultiStart.m', 101)" style="font-weight:bold">MultiStart/run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/MultiStart.m',101,0)">line 101</a>)
+               globaloptim.multistart.fmultistart(problem,startPointSets,msoptions);
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed/run_one', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 51)" style="font-weight:bold">benchmark_multiseed/run_one</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',51,0)">line 51</a>)
+          [~, ~, flag] = run(ms, prob, 1000);
+                         ^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 20)" style="font-weight:bold">benchmark_multiseed</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',20,0)">line 20</a>)
+    R = run_one(name, s);
+        ^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('J009a_benchmark_main_retry', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009a_benchmark_main_retry.m', 1)" style="font-weight:bold">J009a_benchmark_main_retry</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009a_benchmark_main_retry.m',1,0)">line 1</a>)
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('run', '/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m', 100)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m',100,0)">line 100</a>)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon>run_job', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 34)" style="font-weight:bold">job_daemon>run_job</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',34,0)">line 34</a>)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 23)" style="font-weight:bold">job_daemon</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',23,0)">line 23</a>)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+diary off; job_daemon

@@ -1,0 +1,30 @@
+=== K111_wind_analysis start 20-Oct-2026 13:52:40
+forced nw= 0: ns=290 Eb=254.2 J=0.10973
+forced nw= 1: ns=282 Eb=245.0 J=0.11276
+forced nw= 2: ns=275 Eb=243.2 J=0.11636
+forced nw= 4: ns=254 Eb=224.5 J=0.12487
+forced nw= 6: ns=243 Eb=220.2 J=0.13471
+forced nw= 8: ns=232 Eb=216.3 J=0.14455
+forced nw=12: ns=212 Eb=210.4 J=0.16355
+forced nw=16: ns=194 Eb=209.5 J=0.18184
+wind scale 1.0 -> [290 0 254.2]
+wind scale 1.1 -> [290 0 254.2]
+wind scale 1.2 -> [290 0 254.2]
+wind scale 1.3 -> [290 0 254.2]
+wind scale 1.4 -> [291 0 242.6]
+wind scale 1.5 -> [291 0 242.6]
+wind scale 1.6 -> [291 0 242.6]
+wind scale 1.7 -> [254 1 230.0]
+wind scale 1.8 -> [253 1 236.2]
+wind scale 1.9 -> [208 2 206.2]
+wind scale 2.0 -> [202 2 207.3]
+C_WT 1500 -> [290 0 254.2]
+C_WT 1350 -> [290 0 254.2]
+C_WT 1200 -> [291 0 242.6]
+C_WT 1050 -> [291 0 242.6]
+C_WT 900 -> [290 0 254.2]
+C_WT 750 -> [290 0 254.2]
+C_WT 600 -> [290 0 254.2]
+C_WT 450 -> [290 0 254.2]
+C_WT 300 -> [291 0 242.6]
+=== K111_wind_analysis end 20-Oct-2026 13:56:50 (250.0 s) OK

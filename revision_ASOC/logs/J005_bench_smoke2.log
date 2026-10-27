@@ -1,0 +1,10 @@
+=== J005_bench_smoke2 start 19-Oct-2026 15:33:08
+PSO    seed 98  J_cont=0.091681 J_int=0.089595 x_int=[25 4 95.77] evals=391 t=0.72s
+GA     seed 98  J_cont=0.089335 J_int=0.093963 x_int=[8 5 114.36] evals=396 t=0.80s
+SA     seed 98  J_cont=0.097005 J_int=0.093308 x_int=[34 4 70.25] evals=384 t=0.79s
+SO     seed 98  J_cont=0.088245 J_int=0.089571 x_int=[25 4 92.59] evals=384 t=3.78s
+MS     seed 98  J_cont=0.105689 J_int=0.103786 x_int=[72 3 80.02] evals=386 t=0.87s
+GS     seed 98  J_cont=0.095435 J_int=0.095504 x_int=[5 5 178.57] evals=884 t=1.85s
+DPS    seed 98  J_cont=0.088363 J_int=0.094028 x_int=[10 5 121.04] evals=382 t=0.83s
+PSOPS  seed 98  J_cont=0.090153 J_int=0.090200 x_int=[32 4 103.32] evals=381 t=0.74s
+=== J005_bench_smoke2 end 19-Oct-2026 15:33:19 (10.6 s) OK

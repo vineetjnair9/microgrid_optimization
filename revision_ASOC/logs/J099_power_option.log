@@ -1,0 +1,6 @@
+=== J099_power_option start 19-Oct-2026 16:55:00
+scale_bs_power=0: x=[9 4 65.85] J=0.1858 F=[0.4297 0.2285 0.0000 0.1079 0.1628] LCOE=0.2135 base=0.4968 Em=11467 DEh=2806 cycles/y=219.0 lost=0.0 dump=10100
+   8 kW: x=[10 4 54.23] J=0.1483 DPSP=0.0131 LCOE=0.1516
+scale_bs_power=1: x=[73 4 139.30] J=0.0781 F=[0.2336 0.0367 0.0000 0.0960 0.0240] LCOE=0.1160 base=0.4968 Em=1844 DEh=389 cycles/y=176.4 lost=0.0 dump=9802
+   8 kW: x=[71 4 139.82] J=0.0756 DPSP=0.0045 LCOE=0.1072
+=== J099_power_option end 19-Oct-2026 16:55:53 (52.2 s) OK

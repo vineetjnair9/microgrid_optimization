@@ -1,0 +1,11 @@
+=== J009d_rerun_main start 19-Oct-2026 16:04:05
+S1 best J=0.09973 x=[23 4 67.31] median over seeds 0.09973
+S2 best J=0.11402 x=[9 5 114.32] median over seeds 0.11486
+S3 best J=0.08634 x=[32 4 107.27] median over seeds 0.08634
+S4 best J=0.09655 x=[5 5 143.68] median over seeds 0.09655
+LIDE (ii) x_kW=[4.032 14.966 103.47] J=0.08361
+LA_DE J=0.10831 x=[35 4 24.72]
+LI_MT J=0.11335 x=[13 4 64.12]
+LA_MT J=0.13169 x=[12 4 24.02]
+8 kW design x=[28 4 94.49] J=0.08578
+=== J009d_rerun_main end 19-Oct-2026 16:09:18 (313.0 s) OK

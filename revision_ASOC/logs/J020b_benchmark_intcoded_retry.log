@@ -1,0 +1,94 @@
+=== J020b_benchmark_intcoded_retry start 19-Oct-2026 16:41:33
+PSO    seed  1  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1800 t=2.99s
+GA     seed  1  J_cont=0.089526 J_int=0.088710 x_int=[1 5 116.74] evals=2001 t=3.25s
+SA     seed  1  J_cont=0.086902 J_int=0.086339 x_int=[32 4 107.29] evals=1991 t=3.39s
+SO     seed  1  J_cont=0.086712 J_int=0.086712 x_int=[33 4 107.55] evals=1983 t=28.18s
+MS     seed  1  J_cont=0.090472 J_int=0.088725 x_int=[25 4 92.64] evals=1987 t=4.25s
+GS     seed  1  J_cont=0.090514 J_int=0.089525 x_int=[1 5 91.50] evals=1012 t=2.03s
+DPS    seed  1  J_cont=0.087323 J_int=0.086707 x_int=[34 4 109.59] evals=1984 t=3.37s
+PSOPS  seed  1  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1729 t=2.82s
+PSO    seed  2  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1500 t=2.43s
+GA     seed  2  J_cont=0.089858 J_int=0.089858 x_int=[19 4 85.03] evals=1997 t=3.30s
+SA     seed  2  J_cont=0.089613 J_int=0.088275 x_int=[28 4 98.01] evals=1980 t=3.30s
+SO     seed  2  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1985 t=29.39s
+MS     seed  2  J_cont=0.089879 J_int=0.088350 x_int=[1 5 111.95] evals=1985 t=4.04s
+GS     seed  2  J_cont=0.103637 J_int=0.093592 x_int=[0 5 69.96] evals=1009 t=1.82s
+DPS    seed  2  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1984 t=3.43s
+PSOPS  seed  2  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1609 t=2.62s
+PSO    seed  3  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1595 t=2.67s
+GA     seed  3  J_cont=0.089621 J_int=0.088349 x_int=[1 5 111.94] evals=1996 t=3.25s
+SA     seed  3  J_cont=0.089393 J_int=0.087999 x_int=[0 5 111.69] evals=1990 t=3.28s
+SO     seed  3  J_cont=0.087374 J_int=0.087374 x_int=[36 4 112.69] evals=1983 t=27.70s
+MS     seed  3  J_cont=0.089750 J_int=0.087212 x_int=[36 4 110.78] evals=1986 t=3.84s
+GS     seed  3  J_cont=0.089664 J_int=0.089302 x_int=[0 5 132.89] evals=984 t=1.77s
+DPS    seed  3  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1985 t=3.34s
+PSOPS  seed  3  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1705 t=2.78s
+PSO    seed  4  J_cont=0.087998 J_int=0.087998 x_int=[0 5 111.68] evals=1413 t=2.38s
+GA     seed  4  J_cont=0.089951 J_int=0.088712 x_int=[26 4 96.05] evals=1987 t=3.31s
+SA     seed  4  J_cont=0.096730 J_int=0.095051 x_int=[62 4 106.12] evals=1993 t=3.21s
+SO     seed  4  J_cont=0.086837 J_int=0.086705 x_int=[34 4 109.57] evals=1986 t=27.23s
+MS     seed  4  J_cont=0.089840 J_int=0.088903 x_int=[40 4 95.00] evals=1984 t=5.35s
+GS     seed  4  J_cont=0.090197 J_int=0.088686 x_int=[25 4 97.52] evals=1039 t=2.20s
+DPS    seed  4  J_cont=0.086337 J_int=0.086337 x_int=[32 4 107.27] evals=1985 t=3.92s
+PSOPS  seed  4  J_cont=0.087998 J_int=0.087998 x_int=[0 5 111.68] evals=1505 t=2.80s
+PSO    seed  5  J_cont=0.087409 J_int=0.087409 x_int=[29 4 131.98] evals=1688 t=3.06s
+GA     seed  5  J_cont=0.089086 J_int=0.088903 x_int=[40 4 95.01] evals=1999 t=3.78s
+SA     seed  5  J_cont=0.091548 J_int=0.091174 x_int=[48 4 104.57] evals=1987 t=3.80s
+{Operation terminated by user during globaloptim.internal.distance.pdist2
+
+
+In globaloptim.bmo.surrogates.CompactRBF/computeDistance
+
+In globaloptim.bmo.surrogates.CompactRBF/evaluateImpl
+
+In ()
+
+In ()
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial/proposeAndQualifyPoints
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial/proposeAllPoints
+
+In globaloptim.bmo.optimizer.SurrogateAdaptiveTrial/proposeEvaluations
+
+In globaloptim.bmo.SurrogateSolver/createNewTrial
+
+In globaloptim.bmo.SurrogateSolver/getTrial
+
+In globaloptim.bmo.solver
+
+In globaloptim.bmo.solver
+
+In globaloptim.bmo.solver
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('globaloptim.bmo.BlackboxModelOptimizer/optimize', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/+globaloptim/+bmo/BlackboxModelOptimizer.m', 150)" style="font-weight:bold">globaloptim.bmo.BlackboxModelOptimizer/optimize</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/+globaloptim/+bmo/BlackboxModelOptimizer.m',150,0)">line 150</a>)
+                    nextTrial = globaloptim.bmo.solver(self.trialRequest);
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('surrogateopt', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/surrogateopt.m', 129)" style="font-weight:bold">surrogateopt</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/surrogateopt.m',129,0)">line 129</a>)
+controller = controller.optimize();
+             ^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed/run_one', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 45)" style="font-weight:bold">benchmark_multiseed/run_one</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',45,0)">line 45</a>)
+        [~, ~, flag] = surrogateopt(@fw, lb, ub, o);
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('benchmark_multiseed', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m', 20)" style="font-weight:bold">benchmark_multiseed</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/benchmark_multiseed.m',20,0)">line 20</a>)
+    R = run_one(name, s);
+        ^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('J020b_benchmark_intcoded_retry', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J020b_benchmark_intcoded_retry.m', 1)" style="font-weight:bold">J020b_benchmark_intcoded_retry</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J020b_benchmark_intcoded_retry.m',1,0)">line 1</a>)
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('run', '/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m', 100)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m',100,0)">line 100</a>)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon>run_job', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 34)" style="font-weight:bold">job_daemon>run_job</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',34,0)">line 34</a>)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 23)" style="font-weight:bold">job_daemon</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',23,0)">line 23</a>)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+diary off; job_daemon

@@ -1,0 +1,29 @@
+=== J004_bench_smoke start 19-Oct-2026 15:31:44
+PSO    seed 99  J_cont=0.091777 J_int=0.093119 x_int=[14 4 116.75] evals=306 t=0.61s
+GA     seed 99  J_cont=0.089119 J_int=0.094246 x_int=[9 5 114.49] evals=307 t=1.54s
+SA     seed 99  J_cont=0.109082 J_int=0.107101 x_int=[94 3 105.99] evals=284 t=0.70s
+SO     seed 99  J_cont=0.097314 J_int=0.090510 x_int=[28 4 127.01] evals=278 t=5.35s
+MS     seed 99  J_cont=NaN J_int=Inf x_int=[NaN NaN NaN] evals=387 t=1.05s
+GS     seed 99  J_cont=NaN J_int=Inf x_int=[NaN NaN NaN] evals=387 t=0.86s
+DPS    seed 99  J_cont=0.089441 J_int=0.093973 x_int=[11 4 90.03] evals=285 t=0.87s
+=== J004_bench_smoke end 19-Oct-2026 15:31:58 (14.8 s) ERROR: Error using optimoptions (line 54)
+Invalid value for OPTIONS parameter MaxFunctionEvaluations: must be a real non-negative integer.
+
+Error in benchmark_multiseed/run_one (line 67)
+        o2 = optimoptions('patternsearch','UseCompletePoll',true,'Display','off', ...
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in benchmark_multiseed (line 15)
+    R = run_one(name, s);
+        ^^^^^^^^^^^^^^^^
+Error in J004_bench_smoke (line 1)
+benchmark_multiseed({'PSO','GA','SA','SO','MS','GS','DPS','PSOPS'}, 99, 300, fullfile('..','results','benchmark_smoke'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in job_daemon>run_job (line 34)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+Error in job_daemon (line 23)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^

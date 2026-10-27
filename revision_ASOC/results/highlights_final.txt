@@ -1,0 +1,5 @@
+Eight solvers benchmarked over 30 runs at equal budget with statistical tests
+Pareto designs selected by knee point, compromise and TOPSIS rules
+Monte Carlo re-ranking trades expected cost against cost tail risk
+PV and Li-ion hybrid supplies 97% renewable energy at 63% below diesel cost
+Reliability target sets the diesel generator size, not the renewable capacity

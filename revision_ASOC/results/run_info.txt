@@ -1,0 +1,5 @@
+matlab = 26.1.0.3346908 (R2026a) Update 5
+cpu = Apple M1 Max
+mem_GB = 64
+macos = 26.6.2
+computer = MACA64

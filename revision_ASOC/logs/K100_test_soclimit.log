@@ -1,0 +1,19 @@
+=== K100_test_soclimit start 19-Oct-2026 20:51:40
+x=[100            16        160.96] J=0.2287 F=[0.6113 0.1905 0.0000 0.2247 0.1172] LCOE=0.3037 DEh=2120 cyc=175 lost=0.0 dump=24363 E_PV=33263 E_WT=62449 socmin=0.100 socmax=0.900
+   DC balance residual (no-DE hours): max|r| = 0.0000 kW over 6640 h
+x=[200    8  250] J=0.1571 F=[0.4904 0.0857 0.0000 0.1542 0.0552] LCOE=0.2436 DEh=1012 cyc=150 lost=0.0 dump=15957 E_PV=66526 E_WT=31224 socmin=0.100 socmax=0.900
+   DC balance residual (no-DE hours): max|r| = 0.0000 kW over 7748 h
+x=[0  0  0] J=0.6159 F=[1.0176 1.0314 0.0000 0.0305 1.0000] LCOE=0.5055 DEh=8760 cyc=0 lost=0.0 dump=2095 E_PV=0 E_WT=0 socmin=0.900 socmax=0.900
+   DC balance residual (no-DE hours): max|r| =  kW over 0 h
+x=[400   40  400] J=0.3328 F=[0.9854 0.0000 0.0000 0.6786 0.0000] LCOE=0.4896 DEh=0 cyc=82 lost=0.0 dump=196240 E_PV=133053 E_WT=156122 socmin=0.303 socmax=0.900
+   DC balance residual (no-DE hours): max|r| = 0.0000 kW over 8760 h
+1 WT: E_WT=3903 kWh/y, CF=0.141
+1 PV module: E_PV=333 kWh/y, CF=0.149
+PSO wide bounds: x=[290 0 254.23] J=0.10973 F=[0.3760 0.0429 0.0000 0.1010 0.0288] LCOE=0.1868 DEh=511 cyc=202 REF=0.971
+  290.0000         0  254.2328
+  290.0000         0  254.2328
+  290.0000         0  254.2329
+
+    0.1097    0.1097    0.1097
+
+=== K100_test_soclimit end 19-Oct-2026 20:51:47 (7.1 s) OK

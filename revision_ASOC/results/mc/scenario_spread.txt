@@ -1,0 +1,3 @@
+irr_cv = 0.0515
+wind_cv = 0.0992
+load_cv = 0.003

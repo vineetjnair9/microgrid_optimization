@@ -1,0 +1,39 @@
+=== J007_benchmark_main start 19-Oct-2026 15:39:04
+PSO    seed  1  J_cont=0.087544 J_int=0.094577 x_int=[12 5 121.67] evals=1986 t=3.75s
+GA     seed  1  J_cont=0.087836 J_int=0.091898 x_int=[15 4 91.38] evals=1998 t=3.77s
+SA     seed  1  J_cont=0.090491 J_int=0.090186 x_int=[31 4 101.15] evals=1986 t=3.85s
+SO     seed  1  J_cont=0.088281 J_int=0.093964 x_int=[8 5 114.38] evals=1980 t=34.49s
+MS     seed  1  J_cont=0.091333 J_int=0.092379 x_int=[15 4 105.01] evals=1981 t=4.12s
+GS     seed  1  J_cont=0.089090 J_int=0.093918 x_int=[6 5 116.75] evals=1989 t=4.19s
+DPS    seed  1  J_cont=0.087708 J_int=0.094336 x_int=[12 4 115.40] evals=1989 t=3.85s
+PSOPS  seed  1  J_cont=0.087546 J_int=0.094692 x_int=[12 5 121.79] evals=1799 t=3.33s
+PSO    seed  2  J_cont=0.087610 J_int=0.094506 x_int=[10 5 117.26] evals=1975 t=3.53s
+GA     seed  2  J_cont=0.090455 J_int=0.090809 x_int=[19 4 85.07] evals=1999 t=3.59s
+SA     seed  2  J_cont=0.092512 J_int=0.091504 x_int=[40 4 103.81] evals=1985 t=4.10s
+SO     seed  2  J_cont=0.087877 J_int=0.091898 x_int=[15 4 91.37] evals=1979 t=34.54s
+MS     seed  2  J_cont=0.095864 J_int=0.095572 x_int=[20 4 184.73] evals=1985 t=3.53s
+GS     seed  2  J_cont=0.095496 J_int=0.090879 x_int=[23 4 81.35] evals=1986 t=3.71s
+=== J007_benchmark_main end 19-Oct-2026 15:40:59 (114.7 s) ERROR: Error using poptimfcnchk (line 59)
+Objective function must be real and not NaN at the starting point.
+
+Error in patternsearch (line 141)
+[Iterate,OUTPUT.funccount] = poptimfcnchk(FUN,nonlcon,X0,Iterate, ...
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in benchmark_multiseed/run_one (line 55)
+        end
+        ^^^
+Error in benchmark_multiseed (line 15)
+for s = seeds
+        ^^^^^
+Error in J007_benchmark_main (line 1)
+benchmark_multiseed({'PSO','GA','SA','SO','MS','GS','DPS','PSOPS'}, 1:30, 2000, fullfile('..','results','benchmark'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in job_daemon>run_job (line 34)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+Error in job_daemon (line 23)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^

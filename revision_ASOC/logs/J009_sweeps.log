@@ -1,0 +1,39 @@
+=== J009_sweeps start 19-Oct-2026 15:47:51
+sweep DG_rating done 19-Oct-2026 15:50:48
+sweep diesel_price done 19-Oct-2026 15:53:26
+sweep interest done 19-Oct-2026 15:55:54
+sweep inflation done 19-Oct-2026 15:58:23
+sweep LI_price done 19-Oct-2026 16:01:00
+{Operation terminated by user during <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('obj_sizing', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/obj_sizing.m', 188)" style="font-weight:bold">obj_sizing</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/obj_sizing.m',188,0)">line 188</a>)
+
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('J009_sweeps>@(x)obj_sizing(x,p,data)', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009_sweeps.m', 25)" style="font-weight:bold">J009_sweeps>@(x)obj_sizing(x,p,data)</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009_sweeps.m',25,0)">line 25</a>)
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pso_best>@(x)fJ([round(x(1)),round(x(2)),x(3:end)])', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/pso_best.m', 4)" style="font-weight:bold">pso_best>@(x)fJ([round(x(1)),round(x(2)),x(3:end)])</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/pso_best.m',4,0)">line 4</a>)
+if polish, g = @(x) fJ([round(x(1)) round(x(2)) x(3:end)]); else, g = fJ; end
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('fcnvectorizer', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/private/fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/private/fcnvectorizer.m',19,0)">line 19</a>)
+            y_ = feval(fun,(pop(i,:)));
+                 ^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('particleswarm>pswcore', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/particleswarm.m', 294)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/particleswarm.m',294,0)">line 294</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn, options.ProblemdefOptions.FunOnWorkers, 'particleswarm');
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('particleswarm', '/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/particleswarm.m', 69)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/globaloptim/globaloptim/particleswarm.m',69,0)">line 69</a>)
+[x,fval,exitFlag,output,points] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pso_best', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/pso_best.m', 9)" style="font-weight:bold">pso_best</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/pso_best.m',9,0)">line 9</a>)
+  [x, fv] = particleswarm(g, nvars, lb, ub, o);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('J009_sweeps', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009_sweeps.m', 25)" style="font-weight:bold">J009_sweeps</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/jobs/J009_sweeps.m',25,0)">line 25</a>)
+
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('run', '/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m', 100)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m',100,0)">line 100</a>)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon>run_job', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 34)" style="font-weight:bold">job_daemon>run_job</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',34,0)">line 34</a>)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('job_daemon', '/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m', 23)" style="font-weight:bold">job_daemon</a> (<a href="matlab: opentoline('/Users/vinee/Documents/GitHub/microgrid_optimization/revision_ASOC/matlab/job_daemon.m',23,0)">line 23</a>)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+diary off; job_daemon

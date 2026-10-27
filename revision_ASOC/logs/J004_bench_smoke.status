@@ -1,0 +1,21 @@
+ERROR: Error using optimoptions (line 54)
+Invalid value for OPTIONS parameter MaxFunctionEvaluations: must be a real non-negative integer.
+
+Error in benchmark_multiseed/run_one (line 67)
+        o2 = optimoptions('patternsearch','UseCompletePoll',true,'Display','off', ...
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in benchmark_multiseed (line 15)
+    R = run_one(name, s);
+        ^^^^^^^^^^^^^^^^
+Error in J004_bench_smoke (line 1)
+benchmark_multiseed({'PSO','GA','SA','SO','MS','GS','DPS','PSOPS'}, 99, 300, fullfile('..','results','benchmark_smoke'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in job_daemon>run_job (line 34)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+Error in job_daemon (line 23)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,11 @@
+=== J013_dispatch start 19-Oct-2026 16:41:32
+i_16kW               J=0.5389 COE_n=0.8230 Em_n=0.6200 DPSP=0.0037 Dump=0.3702 REF=0.6574 COE=0.307 USD/kWh flag=2 (0.2s)
+ii_8kW_16kWsizing    J=0.2340 COE_n=0.3092 Em_n=0.2406 DPSP=0.0095 Dump=0.2180 REF=0.8317 COE=0.115 USD/kWh flag=2 (0.2s)
+iii_8kW_8kWsizing    J=0.2422 COE_n=0.3102 Em_n=0.2456 DPSP=0.0224 Dump=0.2388 REF=0.8257 COE=0.116 USD/kWh flag=-2 (0.1s)
+low_solar            J=0.2107 COE_n=0.3056 Em_n=0.2375 DPSP=0.0071 Dump=0.1079 REF=0.8083 COE=0.114 USD/kWh flag=2 (0.1s)
+low_wind             J=0.4571 COE_n=0.5530 Em_n=0.5157 DPSP=0.0102 Dump=0.0203 REF=0.2607 COE=0.206 USD/kWh flag=-2 (0.2s)
+low_solar_wind       J=0.5853 COE_n=0.6807 Em_n=0.6885 DPSP=0.0103 Dump=0.0001 REF=0.0280 COE=0.254 USD/kWh flag=-2 (0.1s)
+load_peaky           J=0.3777 COE_n=0.5117 Em_n=0.3856 DPSP=0.0073 Dump=0.3647 REF=0.7511 COE=0.191 USD/kWh flag=2 (0.1s)
+load_shift           J=0.1589 COE_n=0.2366 Em_n=0.1512 DPSP=0.0410 Dump=0.1328 REF=0.8850 COE=0.088 USD/kWh flag=-2 (0.1s)
+load_shift_curtail   J=0.1150 COE_n=0.1245 Em_n=0.0524 DPSP=0.0074 Dump=0.2441 REF=0.9610 COE=0.049 USD/kWh flag=2 (0.1s)
+=== J013_dispatch end 19-Oct-2026 16:41:33 (1.3 s) OK

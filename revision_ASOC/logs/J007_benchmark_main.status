@@ -1,0 +1,24 @@
+ERROR: Error using poptimfcnchk (line 59)
+Objective function must be real and not NaN at the starting point.
+
+Error in patternsearch (line 141)
+[Iterate,OUTPUT.funccount] = poptimfcnchk(FUN,nonlcon,X0,Iterate, ...
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in benchmark_multiseed/run_one (line 55)
+        end
+        ^^^
+Error in benchmark_multiseed (line 15)
+for s = seeds
+        ^^^^^
+Error in J007_benchmark_main (line 1)
+benchmark_multiseed({'PSO','GA','SA','SO','MS','GS','DPS','PSOPS'}, 1:30, 2000, fullfile('..','results','benchmark'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in job_daemon>run_job (line 34)
+run(path);   % runs the script in this function's own workspace
+^^^^^^^^^
+Error in job_daemon (line 23)
+    run_job(fullfile(jobs,f)); status = 'OK';
+    ^^^^^^^^^^^^^^^^^^^^^^^^^

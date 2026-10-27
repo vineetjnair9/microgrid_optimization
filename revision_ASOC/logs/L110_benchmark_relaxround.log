@@ -1,0 +1,22 @@
+=== L110_benchmark_relaxround start 20-Oct-2026 15:50:52
+PSO    seed  1  J_cont=0.108851 J_int=0.108926 x_int=[290 0 235.20] evals=1954 t=3.79s
+GA     seed  1  J_cont=0.112083 J_int=0.112235 x_int=[278 1 248.73] evals=2000 t=3.82s
+PSO    seed  2  J_cont=0.108851 J_int=0.108926 x_int=[290 0 235.18] evals=1956 t=3.76s
+GA     seed  2  J_cont=0.110002 J_int=0.112122 x_int=[283 1 229.98] evals=1997 t=3.83s
+PSO    seed  3  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1504 t=2.88s
+GA     seed  3  J_cont=0.112928 J_int=0.113042 x_int=[281 1 287.37] evals=1996 t=3.81s
+PSO    seed  4  J_cont=0.108851 J_int=0.108927 x_int=[290 0 235.20] evals=1624 t=3.11s
+GA     seed  4  J_cont=0.111819 J_int=0.112371 x_int=[280 1 258.99] evals=1997 t=3.82s
+PSO    seed  5  J_cont=0.108899 J_int=0.108927 x_int=[290 0 235.20] evals=1707 t=3.26s
+GA     seed  5  J_cont=0.109543 J_int=0.109183 x_int=[294 0 248.04] evals=1996 t=3.79s
+PSO    seed  6  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1568 t=2.99s
+GA     seed  6  J_cont=0.109204 J_int=0.108920 x_int=[288 0 236.04] evals=1992 t=3.80s
+PSO    seed  7  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1898 t=3.62s
+GA     seed  7  J_cont=0.109113 J_int=0.109075 x_int=[292 0 246.43] evals=1990 t=3.78s
+PSO    seed  8  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1923 t=3.67s
+GA     seed  8  J_cont=0.127891 J_int=0.127503 x_int=[245 3 224.86] evals=1994 t=3.83s
+PSO    seed  9  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1772 t=3.39s
+GA     seed  9  J_cont=0.112538 J_int=0.112056 x_int=[281 1 232.49] evals=2000 t=3.81s
+PSO    seed 10  J_cont=0.108851 J_int=0.108925 x_int=[290 0 235.17] evals=1624 t=3.10s
+GA     seed 10  J_cont=0.113998 J_int=0.113108 x_int=[276 1 285.34] evals=1998 t=3.82s
+=== L110_benchmark_relaxround end 20-Oct-2026 15:52:04 (71.8 s) OK

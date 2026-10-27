@@ -1,0 +1,10 @@
+=== J100_test_balance start 19-Oct-2026 16:45:30
+x=[32             4        107.27] J=0.2554 F=[0.7655 0.2150 0.0000 0.1539 0.1429] LCOE=0.3803 DEh=2699 cyc=1278 lost_kWh=0.0 dump_kWh=15439.0
+   max unexplained deficit (DC kW) in deficit hours: 0.0000; hours with SOC jump < -0.2: 0
+x=[15             4        106.53] J=0.2447 F=[0.7278 0.2229 0.0000 0.1167 0.1561] LCOE=0.3616 DEh=2772 cyc=1132 lost_kWh=0.0 dump_kWh=11114.1
+   max unexplained deficit (DC kW) in deficit hours: 0.0000; hours with SOC jump < -0.2: 0
+x=[0  0  0] J=0.6096 F=[0.9975 1.0078 0.0000 0.0427 1.0000] LCOE=0.4956 DEh=8452 cyc=1178 lost_kWh=0.0 dump_kWh=2871.0
+   max unexplained deficit (DC kW) in deficit hours: 0.0000; hours with SOC jump < -0.2: 1179
+x=[40   10  200] J=0.4467 F=[1.3982 0.1916 0.0000 0.5840 0.0595] LCOE=0.6947 DEh=2415 cyc=1975 lost_kWh=0.0 dump_kWh=125273.6
+   max unexplained deficit (DC kW) in deficit hours: 0.0000; hours with SOC jump < -0.2: 0
+=== J100_test_balance end 19-Oct-2026 16:45:30 (0.2 s) OK

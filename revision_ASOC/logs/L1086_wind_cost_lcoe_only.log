@@ -1,0 +1,15 @@
+=== L1086_wind_cost_lcoe_only start 20-Oct-2026 15:21:58
+LCOE-only C_WT 1500 -> [306 0 214.1]
+LCOE-only C_WT 1350 -> [306 0 214.1]
+LCOE-only C_WT 1200 -> [306 0 214.1]
+LCOE-only C_WT 1050 -> [297 1 204.4]
+LCOE-only C_WT 900 -> [283 3 185.1]
+LCOE-only C_WT 750 -> [273 4 177.0]
+LCOE-only C_WT 600 -> [264 5 171.4]
+LCOE-only wind 1.1 -> [306 0 214.1]
+LCOE-only wind 1.2 -> [272 2 185.5]
+LCOE-only wind 1.3 -> [251 3 166.0]
+LCOE-only wind 1.4 -> [229 4 149.9]
+LCOE-only wind 1.5 -> [217 4 144.3]
+LCOE-only wind 1.6 -> [186 5 135.6]
+=== L1086_wind_cost_lcoe_only end 20-Oct-2026 15:25:59 (240.6 s) OK

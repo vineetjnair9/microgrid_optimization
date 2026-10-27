@@ -1,0 +1,208 @@
+% Response to reviewers, ASOC-D-26-10040
+% SOURCE FILE. Build with REV_DIR/python/build_response.py, which inserts the verbatim
+% Unfilled keys become \ph{KEY} (red).
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{mathptmx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\definecolor{revblue}{RGB}{0,70,140}
+\definecolor{commentgrey}{RGB}{90,90,90}
+\newcommand{\ph}[1]{\textcolor{red}{[\detokenize{#1}]}}
+\newcounter{rc}
+\newcommand{\reviewer}[1]{\section*{Reviewer #1}\setcounter{rc}{0}}
+\newcommand{\rcomment}[2]{\stepcounter{rc}\par\medskip
+  \noindent\textbf{Comment #1.}\par
+  {\color{commentgrey}\itshape #2\par}}
+\newcommand{\response}[1]{\par\noindent\textbf{Response.} #1\par}
+\newcommand{\change}[2]{\par\noindent\textbf{Changes in the manuscript} (#1):\par
+  \begin{quote}\color{revblue}#2\end{quote}}
+
+\begin{document}
+
+\begin{center}
+{\Large Response to reviewers}\\[4pt]
+Manuscript ASOC-D-26-10040\\
+\textit{Multiobjective optimization-based design and dispatch of islanded, hybrid microgrids for remote, off-grid communities in sub-Saharan Africa}\\[4pt]
+Vineet Jagadeesan Nair \quad \today
+\end{center}
+
+\section*{To the Editor}
+Dear Editor,
+
+Thank you for handling the manuscript and for obtaining two detailed reports. The revision addresses four themes that the reviewers raised.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Soft-computing contribution.} We reframed the paper around a design workflow: a statistically validated solver benchmark, a-posteriori Pareto search with explicit rules for selecting a design, and a Monte Carlo re-ranking of the candidate designs by risk. The Kenyan case study is the application that exercises this workflow.
+\item \textbf{Solver benchmark.} All eight solver configurations now run <<BENCH_NRUNS>> independent times at an equal budget of 2,000 objective evaluations. We report success rates, expected running time and non-parametric tests, and we dropped the runtime\,$\times$\,objective indicator.
+\item \textbf{Weighted sum vs.\ Pareto.} The text now separates a-priori weighted-sum sizing from the Pareto analysis. It extracts knee, compromise and TOPSIS designs from the front and adds an explicit cost--reliability front with the generator rating as a decision variable.
+\item \textbf{Uncertainty and data.} A Monte Carlo analysis over <<MC_N>> annual resource and load scenarios replaces the purely deterministic robustness tests, which we keep as labeled stress tests. The wind data are validated against NASA POWER (MERRA-2) reanalysis.
+\end{enumerate}
+While re-implementing the model for these analyses we found and corrected several errors in the energy-balance and cost accounting of the original simulation code. These corrections change the optimal designs and most headline numbers. Every result in the revised manuscript was regenerated with the corrected code, and the corrections are listed under ``Additional changes'' at the end of this letter. All new code, random seeds and results are public in release v2.0-asoc of the repository cited in the paper. A marked-up manuscript shows all changes.
+
+\subsection*{Summary of major changes}
+{\small
+\begin{tabular}{p{7.4cm}p{4.4cm}p{3.0cm}}
+\toprule
+Change & Location & Comments\\
+\midrule
+Contribution reframed as a benchmark, Pareto-selection and robust re-ranking workflow; new workflow figure & Abstract, Sec.~2.5, Table~1, Fig.~<<REF:fig:workflow>> & R1.1, R2.6, R2.7\\
+Multi-run benchmark at equal budget with non-parametric tests; runtime$\times$objective metric removed & Sec.~5.1, Tables~<<REF:tab:protocol>>--<<REF:tab:bench_tests>>, Fig.~<<REF:fig:solver_comp>> & R1.2, R2.6, R2.8\\
+Weighted-sum vs.\ Pareto distinction; representative designs from the front (extremes, knee, compromise, TOPSIS) & Secs.~4, 5.3--5.5, Table~<<REF:tab:pareto_reps>> & R1.3, R2.10\\
+DG rating as a decision variable and $\varepsilon$-constraint cost--reliability front & Sec.~5.5, Fig.~<<REF:fig:dg_front>> & R2.5\\
+Monte Carlo analysis (<<MC_N>> scenarios), CVaR and loss-of-load probability, robust re-ranking & Sec.~8.1, Table~<<REF:tab:mc>>, Fig.~<<REF:fig:mc>> & R1.4, R2.10, R2.11\\
+Deterministic low-resource days justified as stress tests & Sec.~8.2 & R1.4, R2.11\\
+Two-stage rationale; perfect foresight stated as a limitation & Secs.~4, <<REF:sec:discussion>> & R1.5, R2.1\\
+Strategy 3 explained and stress-tested on fuel price and cycle life & Sec.~5.2, Table~<<REF:tab:strategy_stress>> & R2.2\\
+Absolute LCOE and emissions reported in every sweep; baseline recomputation stated & Sec.~6, App.~B & R2.3\\
+Wind data validated against MERRA-2; correction-factor sweep; role of wind turbines and entry thresholds & App.~A, Secs.~<<REF:sec:wind_role>>, 6 & R2.9\\
+Literature updated (incl.\ the EPSR study) and Table~1 extended & Sec.~2, Table~1 & R2.4\\
+Corrections to the simulation model; all results regenerated & Throughout & Additional changes\\
+\bottomrule
+\end{tabular}}
+
+%==========================================================
+\reviewer{1}
+We thank Reviewer~1 for a careful report that identifies precisely where the methodological positioning, the benchmarking and the uncertainty analysis fell short. We split the report into five comments (R1.1--R1.5), one per paragraph, and quote each verbatim.
+
+\rcomment{R1.1}{<<VERBATIM:R1.1>>}
+\response{We agree that the submitted version presented the solver comparison as its main methodological element, and that ranking established MATLAB implementations on one problem does not by itself advance soft computing. The revision repositions the paper around a three-step workflow for simulation-based, mixed-integer design problems, and tests each step:
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item a solver benchmark on the non-smooth sizing problem at an equal budget of 2,000 evaluations over <<BENCH_NRUNS>> independent runs, scored against an exhaustively computed integer optimum with success rates, expected running time and non-parametric tests (Section~5.1);
+\item a-priori weighted-sum sizing paired with a-posteriori Pareto search, with designs selected from the front by knee-point, compromise and TOPSIS rules (Sections~5.3 and 5.4);
+\item a Monte Carlo re-ranking of these candidate designs by expected cost, conditional value-at-risk (CVaR) of cost and the probability of exceeding 1\% unmet load (Section~8.1).
+\end{enumerate}
+The case study now serves as the application that exercises the workflow. Table~1 gains columns recording whether prior studies report multi-run statistics, a Pareto selection rule and probabilistic uncertainty analysis. Most PSO- and GA-based microgrid studies we review report single runs, stop at the Pareto front without a selection rule, or test robustness with a few deterministic scenarios. We do not claim new metaheuristics. The contribution is a reproducible procedure, with the evidence at each step, for choosing a design that a practitioner can defend.}
+\change{Abstract; highlights; Sec.~2.5; Table~1; Fig.~<<REF:fig:workflow>>; Secs.~5.1, 5.3--5.5, 8.1}{<<QUOTE:This paper makes four contributions.>>}
+
+\rcomment{R1.2}{<<VERBATIM:R1.2>>}
+\response{We agree; a single seeded run cannot support a ranking of stochastic solvers. We repeated the benchmark for all eight configurations (PSO, GA, SA, surrogate optimization, MultiStart, GlobalSearch, pattern search with random restarts, and a PSO--pattern-search hybrid) with <<BENCH_NRUNS>> independent seeds each, an equal budget of 2,000 objective evaluations counted by a wrapper around the objective, and integer-coded unit counts. The reference value $f^*$ comes from an exhaustive search over all integer combinations of PV panels and wind turbines, with the battery capacity optimized for each. Table~<<REF:tab:bench_stats>> reports the best, median, mean, standard deviation and worst objective values, the success rate (runs within 0.5\% of $f^*$), and the expected running time (ERT) to that target. A Kruskal--Wallis test rejects equal performance across solvers ($H=<<BENCH_KW_H>>$, $p=<<BENCH_KW_P>>$). Holm-corrected Mann--Whitney tests with Vargha--Delaney $\hat{A}_{12}$ effect sizes compare each solver with the best-ranked one (Table~<<REF:tab:bench_tests>>). <<BENCH_RESULT_SENTENCE>>
+
+We removed the runtime\,$\times$\,objective indicator. As the reviewer notes, it is not a standard measure: it multiplies quantities with different units and rewards speed regardless of solution quality. Success rate and ERT to a stated quality target, standard in the benchmarking literature (Hansen et al., COCO), replace it, and convergence curves (Fig.~<<REF:fig:solver_comp>>(b)) show anytime behavior.}
+\change{Sec.~5.1, Tables~<<REF:tab:protocol>>--<<REF:tab:bench_tests>>, Fig.~<<REF:fig:solver_comp>>}{<<QUOTE:The comparison follows standard practice for benchmarking>>}
+
+\rcomment{R1.3}{<<VERBATIM:R1.3>>}
+\response{We agree that the original text blurred the two. Section~4 now states that the sizing problem (Eq.~<<REF:eq:sizing>>) is a weighted-sum scalarization, used as an a-priori method for a decision-maker with stated preferences, and that it can only reach supported Pareto points. The a-posteriori analysis uses MATLAB's \texttt{paretosearch} and \texttt{gamultiobj}, which approximate the non-dominated set without fixing weights. We also corrected a sentence that described the Pareto points as having ``the same value of the objective function''; they are mutually non-dominated trade-offs. As a consistency check, <<WS_CHECK_SENTENCE>>
+
+The dispatch objective is likewise a weighted sum, and Section~7 now says so explicitly. Its caption listed five terms while the dispatch formulation uses four (DPSP enters as a constraint); we corrected it. Conclusions drawn from weighted-sum results are now worded as conditional on the weights, and Appendix~C shows how the design moves when each weight varies from 0 to 1.}
+\change{Secs.~4, 5.3--5.5, 7; App.~C}{<<QUOTE:Eq.~(\ref{eq:sizing}) is a weighted-sum scalarization>>}
+
+\rcomment{R1.4}{<<VERBATIM:R1.4>>}
+\response{We agree that two deterministic days cannot characterize performance under real variability. Section~8.1 now propagates uncertainty through the full 8,760-hour simulation with <<MC_N>> Monte Carlo scenarios. Each scenario combines a day-block bootstrap of the 2018 weather within each calendar month (preserving diurnal and seasonal structure), inter-annual multipliers on irradiance ($\mathcal{N}(1,0.05^2)$) and wind speed ($\mathcal{N}(1,0.10^2)$), set at the upper end of the year-to-year variability reported for Kenyan irradiation and for wind resources,, and Ornstein--Uhlenbeck noise on hourly load. For the selected design, annual LCOE ranges from <<MC_CHOSEN_LCOE_P5>> to <<MC_CHOSEN_LCOE_P95>> USD/kWh (5th--95th percentile), and the probability that unmet load exceeds 1\% of demand is <<MC_CHOSEN_P_DPSP>>. <<MC_ROBUST_SENTENCE>>
+
+We kept the 10\% days as deterministic stress tests and now justify them in Section~8.2. The lowest-irradiation day of 2018 delivers <<MIN_IRR_PCT>>\% of the mean daily irradiation and the calmest day has <<MIN_WIND_PCT>>\% of the mean daily wind speed, so the 10\% cases bound a worst single day rather than represent a likely one. Section~<<REF:sec:limitations>> states the remaining limits: one year of measured weather, and no multi-day correlated droughts beyond those present in the 2018 record.}
+\change{Secs.~8.1, 8.2, <<REF:sec:limitations>>}{<<QUOTE:The sizing results rest on one year of weather>>}
+
+\rcomment{R1.5}{<<VERBATIM:R1.5>>}
+\response{We agree and now treat perfect foresight as a limitation of the results, not only as future work. The new limitations section states that the day-ahead dispatch assumes exact knowledge of the next 24 hours of load and weather, so its costs, emissions and DPSP are optimistic relative to a forecast-driven controller. It also states that the sizing stage does not share this bias, because its rule-based controller uses current-hour information only. The future-work section points to receding-horizon and stochastic dispatch as the remedy.}
+\change{Sec.~<<REF:sec:limitations>>; Sec.~7 opening paragraph}{<<QUOTE:First, Stage~2 schedules the generator>>}
+
+%==========================================================
+\reviewer{2}
+We thank Reviewer~2 for a detailed technical reading of the model. Several comments (R2.2, R2.3, R2.9) led us to re-examine the simulation code closely, which is how we found the corrections listed under ``Additional changes''.
+
+\rcomment{R2.1}{<<VERBATIM:R2.1>>}
+\response{We agree that decoupling sizing from dispatch can produce designs that are not optimal under optimized operation, and the revision states this as a limitation. We retain the decoupling for two reasons, now given in Section~4.
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item Stage~1 scores each design under a non-anticipative load-following controller, the strategy most deployed off-grid systems run and the default in HOMER Pro. A design is thus evaluated under an operating policy that an operator can implement without forecasts.
+\item Embedding a 24-hour dispatch optimization in each sizing evaluation would multiply the cost of every evaluation by 365 constrained solves. That makes the multi-run benchmark, the Pareto search and the Monte Carlo analysis that the reviewers requested computationally impractical.
+\end{enumerate}
+The two stages therefore answer different questions. Stage~1 sizes the system for implementable rule-based operation; Stage~2 shows how much optimized day-ahead scheduling can improve the operation of a given design. Stage~2 results are not used to re-size the system, and the text no longer implies that they are. Because rule-based operation is feasible but not optimal, the Stage-1 cost of each design is an upper bound on its cost under optimized dispatch. Integrated or bilevel sizing--dispatch formulations are listed as future work.}
+\change{Sec.~4 (two-stage paragraph); Sec.~<<REF:sec:limitations>>; Sec.~<<REF:sec:future>>}{<<QUOTE:The Stage-1 controller is non-anticipative>>}
+
+\rcomment{R2.2}{<<VERBATIM:R2.2>>}
+\response{<<R22_OPENING>> The diesel engine never runs in order to charge the battery. Under the load-following rule it starts only when renewable output and battery discharge cannot meet the load. When the residual deficit is below the engine's minimum stable output (30\% of rating), the engine must still run at that minimum, and the surplus would otherwise go to the dump load. Strategy~3 rectifies and stores this surplus. Fuel use in that hour is the same with or without storage, so the strategy recovers energy that would otherwise be dumped rather than converting extra fuel into stored electricity. Battery wear is costed through cycle-based replacement (5,475 equivalent full cycles, now counted from energy throughput) and capacity fade.
+
+To test the reviewer's concern about fuel cost and cycle life, Table~<<REF:tab:strategy_stress>> repeats the comparison at diesel prices of 3.20, 5.00 and 7.57 USD/gal (the last is 2.0 USD/L) and with cycle life reduced to 3,000. <<STRESS_RESULT_SENTENCE>>}
+\change{Sec.~5.2; Table~<<REF:tab:strategy_stress>>}{<<QUOTE:The DE never runs in order to charge the battery.>>}
+
+\rcomment{R2.3}{<<VERBATIM:R2.3>>}
+\response{Thank you for raising this; it exposed points that the manuscript explained poorly. Two clarifications.
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item The diesel-only baseline does not run at full load for 8,760 h. It follows the load every hour, consuming a no-load term proportional to its rating plus 0.246~L per kWh delivered (Appendix~B).
+\item In every sensitivity case the baseline LCOE is recomputed with the same diesel price, interest and inflation rates as the hybrid system, so normalized values always compare the two systems under identical conditions. We now state this in Section~6.
+\end{enumerate}
+The reviewer is right that normalized values move with the baseline. This explains the counter-intuitive fall in normalized LCOE as diesel prices rise: the baseline's cost rises faster than the hybrid system's. Section~6 therefore now reports absolute LCOE (USD/kWh) and emissions (kg/yr) next to the normalized values for every sweep. Across the diesel price range, absolute LCOE rises from <<LCOE_ABS_DIESEL_LOW>> to <<LCOE_ABS_DIESEL_HIGH>> USD/kWh. The comment quotes the diesel price as ``3.20/kWh''; the model uses 3.20~USD per US gallon, and Table~<<REF:tab:default>> now gives the unit explicitly.
+
+While re-examining the fuel model we found that the code charged the no-load fuel term in every hour, including hours when the engine was off. We corrected this; the affected results are listed under ``Additional changes''.}
+\change{Sec.~6 (opening paragraph and every sweep figure); App.~B; Table~<<REF:tab:default>>}{<<QUOTE:In every sensitivity case we recompute>>}
+
+\rcomment{R2.4}{<<VERBATIM:R2.4>>}
+\response{We added the suggested study (Wang et al., \textit{Electric Power Systems Research} 232 (2024) 110385) and seven further recent works on metaheuristic and multiobjective sizing and dispatch of hybrid systems, including NSGA-II, improved multiobjective grey wolf, PSO--SA hybrid, multiobjective differential evolution, MCDM-based design selection and stochastic sizing studies. They appear in Section~2.3 and in Table~1, which now records for each study whether it reports multi-run statistics, a Pareto selection rule and probabilistic uncertainty analysis.}
+\change{Sec.~2.3; Table~1}{<<QUOTE:Recent work extends these methods>>}
+
+\rcomment{R2.5}{<<VERBATIM:R2.5>>}
+\response{We agree. With a 16~kW generator, above the 15.0~kW annual peak load, the load-following controller always meets demand, so DPSP is zero in the default case and the reliability objective does not trade off against the others. The revision makes the trade-off explicit in two ways (Section~5.5).
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item We treat the DG rating as a fourth decision variable, with capital, maintenance and fuel costs scaling with rating. Under equal weights, all 10 PSO runs select no generator at all and accept <<DPSP_OPT_PCT>>\% unmet load. This confirms the reviewer's point from the other side: as one of five equally weighted terms, reliability is undervalued, so it must enter as a requirement.
+\item An $\varepsilon$-constraint sweep minimizes the remaining objectives subject to DPSP $\le\varepsilon$ for $\varepsilon$ from 0 to 5\%, with the DG rating free. This gives the cost--reliability front in Fig.~<<REF:fig:dg_front>>. <<EPS_RESULT_SENTENCE>>
+\end{enumerate}
+Section~7 (8~kW generator) and the Monte Carlo analysis (Section~8.1) then report DPSP as a random outcome rather than a fixed zero.}
+\change{Sec.~5.5; Fig.~<<REF:fig:dg_front>>}{<<QUOTE:Second, we solve an $\varepsilon$-constraint problem>>}
+
+\rcomment{R2.6}{<<VERBATIM:R2.6>>}
+\response{We agree that solver comparisons alone are not a methodological contribution. As described in our response to R1.1, the benchmark is now one supporting step of the workflow, made statistically sound. The contribution lies in combining it with Pareto-set selection rules and risk-based re-ranking under uncertainty, applied to a simulation-based mixed-integer design problem. We also removed the wording that presented the PSO runtime as a key result. Runtime is now reported as expected running time to a quality target at equal budget (Section~5.1).}
+\change{Abstract; Sec.~2.5; Sec.~5.1; Conclusions}{<<QUOTE:(ii) We benchmark>>}
+
+\rcomment{R2.7}{<<VERBATIM:R2.7>>}
+\response{We agree and removed the priority claim from the abstract, highlights, contributions and conclusions. The revision states that the workflow is region-agnostic. Sub-Saharan conditions (diesel prices and logistics, real discount rates, scarce measured data and high grid-extension costs) determine the parameter ranges and the design insights. The new discussion section separates findings that are specific to the site from those that transfer to other regions.}
+\change{Abstract; Sec.~2.5; Sec.~<<REF:sec:discussion>>; Conclusions}{<<QUOTE:Sub-Saharan African conditions shape the parameter ranges>>}
+
+\rcomment{R2.8}{<<VERBATIM:R2.8>>}
+\response{This is a fair concern. In the original benchmark neither solver was tuned: both used MATLAB defaults. However, the solvers stopped under their own default criteria rather than a shared evaluation budget, so the speed comparison mixed algorithmic and stopping effects. All solvers now run with documented default settings (Table~<<REF:tab:protocol>>), the same budget of 2,000 evaluations, the same seeds and the same treatment of integer variables. We use defaults deliberately, to reflect how a practitioner applies these tools. Tuned settings could change the margins, and Section~<<REF:sec:limitations>> says so. Because every solver receives the same budget, the comparison no longer depends on stopping criteria.}
+\change{Sec.~5.1; Table~<<REF:tab:protocol>>; Sec.~<<REF:sec:limitations>>}{<<QUOTE:All solvers use MATLAB>>}
+
+\rcomment{R2.9}{<<VERBATIM:R2.9>>}
+\response{We agree that a ratio to forecast-website values was a weak basis. We compared the 2018 TAHMO series with NASA POWER hourly data for the site (MERRA-2 wind, CERES irradiance; Appendix~A, Table~<<REF:tab:wind_val>>). After aligning time stamps (a 2-hour offset), the two irradiance series agree closely (hourly $r=0.96$), which confirms synchronization; the model now applies this 2-hour shift to all station series (see Additional changes). Wind agrees in timing but less closely ($r=0.60$ for daily means, $0.82$ for monthly means). In level, the reanalysis 2~m mean is 2.59 times the TAHMO mean (2.23 vs.\ 0.86~m/s), with monthly ratios from 2.07 to 3.33. TAHMO stations use ATMOS~41 sensors, which are commonly mounted 2~m above ground (the height of the Timbila sensor is not recorded in our data), whereas the model assumed a 1~m reference height; with the factor of 3.70 and extrapolation from 1~m to the 14.5~m hub, the hub-height mean is 4.68~m/s, about 34\% above the 3.50~m/s implied by the reanalysis. Section~6 therefore sweeps the correction factor from 0.75 to 1.25 times its default, where 0.75 corresponds to the reanalysis level. <<WIND_SWEEP_SENTENCE>> Section~<<REF:sec:limitations>> notes that on-site hub-height measurements would be needed before construction.}
+\change{App.~A; Sec.~6 (wind correction factor); Sec.~<<REF:sec:wind_role>> (new); Sec.~<<REF:sec:limitations>>}{<<QUOTE:For the revision we checked the series against an independent source>>}
+
+\rcomment{R2.10}{<<VERBATIM:R2.10>>}
+\response{We agree that the Pareto set needs a decision procedure. The new Section~<<REF:sec:pareto_select>> extracts four kinds of representative design from the 16~kW front (<<N_FRONT_16>> non-dominated points):
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item the extreme solution for each objective;
+\item the knee point, the largest normalized distance below the hyperplane through the extremes (Deb and Gupta);
+\item the compromise solution closest to the ideal point;
+\item TOPSIS selections under equal, cost-priority and sustainability-priority weights.
+\end{itemize}
+Table~<<REF:tab:pareto_reps>> and Fig.~<<REF:fig:pareto_reps>> report them, with integer unit counts re-evaluated exactly. Section~8.1 then re-ranks these candidates by Monte Carlo risk measures. <<MC_ROBUST_SENTENCE>> We dropped the $R^2$ regressions between input variables; Fig.~<<REF:fig:pareto_inputs>> now shows the designs on the front descriptively.}
+\change{Sec.~<<REF:sec:pareto_select>>; Table~<<REF:tab:pareto_reps>>; Fig.~<<REF:fig:pareto_reps>>; Sec.~8.1}{<<QUOTE:A Pareto set is useful to a designer only with a rule>>}
+
+\rcomment{R2.11}{<<VERBATIM:R2.11>>}
+\response{We agree. As detailed in our response to R1.4, Section~8.1 adds a Monte Carlo analysis over <<MC_N>> annual scenarios of irradiance, wind and load. It reports the distributions and 5th--95th percentile bands of cost, emissions, unmet load and renewable fraction, CVaR$_{95}$ of LCOE, and the probability of exceeding 1\% unmet load (Table~<<REF:tab:mc>>, Fig.~<<REF:fig:mc>>). The deterministic low-resource days remain as stress tests (Section~8.2), now labeled and justified as such.}
+\change{Secs.~8.1, 8.2}{<<QUOTE:We then re-ranked the 16~kW candidates>>}
+
+%==========================================================
+\section*{Additional changes}
+\textbf{Corrections to the simulation model.} While re-implementing the sizing simulation with a counted evaluation budget, we found errors in the original code. Each is corrected in the revision, and all sizing, Pareto, sensitivity, dispatch and robustness results were regenerated. They change the optimal designs and most headline numbers. Most visibly, with the corrected turbine power curve the optimal system no longer includes wind turbines. The preference for Strategy~3, the choice of Li-ion storage with diesel backup, and the large cost advantage over diesel-only supply are unchanged.
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item \textbf{Diesel dispatch after battery power limit.} When the battery reached its power limit the generator was not started for the remaining deficit; for the submitted design about 7,800~kWh/yr (about 10\% of demand) went unserved without being counted in DPSP. The generator now covers any remaining deficit, and an energy-balance check confirms that served, stored, dumped and unserved energy close every hour.
+\item \textbf{State of charge after a full battery.} In hours when the battery was full, SOC was reset to its minimum, so stored energy was lost. SOC is now carried forward.
+\item \textbf{No-load fuel.} The no-load fuel term was charged in every hour, including hours when the generator was off. It is now charged only when the generator runs.
+\item \textbf{Battery replacement.} A replacement was charged even when the battery's life exceeded the 25-year project life, and the replacement interval of the battery in the micro-turbine configurations was inverted. Both are corrected; the first affected the interest and inflation sweeps.
+\item \textbf{Battery energy limits and efficiency.} Within an hour the battery could discharge (or charge) its full power rating even when less energy (or headroom) remained above the minimum (or below the maximum) state of charge; the state of charge was then clipped, which created (or discarded) energy. Charge and discharge are now limited to the available energy and headroom. The round-trip efficiency was also applied as a multiplier on both charging and discharging, which made the effective round trip lossless; it is now applied once, on charging.
+\item \textbf{Cycle counting.} Self-discharge dips were counted as cycles. Cycles are now equivalent full cycles from discharge throughput.
+\item \textbf{Battery power rating.} The battery's power limit was fixed at 3.68~kW irrespective of installed capacity. It now scales with capacity (3.68~kW per 13.5~kWh module), as for stacked modules.
+\item \textbf{Wind turbine power curve.} The coefficients of the quadratic power curve used $1/(v_c^2-v_r^2)$ and $3(v_c+v_r)$ where the source formula has $1/(v_c-v_r)^2$ and $(3v_c+v_r)$. As a result the curve returned about half of rated power at the cut-in speed and up to 148\% of rated power just below the rated speed, overstating wind output. The corrected curve rises from zero at cut-in to rated power at the rated speed; Appendix~A shows the corrected equations.
+\item \textbf{Time alignment of the weather data.} The station time stamps lead local time by about 2~h (the best alignment with NASA POWER local-time data, $r = 0.96$ for irradiance), while the load profile is in local time. All station series (irradiance, temperature and wind) are now shifted by 2~h, so solar and wind output are matched with the right hours of demand.
+\item \textbf{Integer variables.} Solvers previously searched a continuous relaxation and reported rounded values without re-evaluating them. The main runs now use integer-coded unit counts with a local polish of battery capacity, and every reported design is evaluated exactly. Relax-and-round is retained as a benchmark variant.
+\end{enumerate}
+
+\textbf{Other changes.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item The representative dispatch day (1 January 2018) is stated explicitly, with its irradiation and wind relative to the annual means.
+\item Dispatch case labels and the dispatch objective caption in Section~7 corrected.
+\item Parameter values in the text aligned with the code, including units of the diesel price and a typo in the diesel $SO_2$ factor (0.074 for 0.0074~g/kWh, Table~<<REF:tab:emissions>>; the code used the correct value).
+\item Benchmark settings: the original text stated evaluation and iteration limits that the scripts did not apply. The new protocol table documents the settings actually used.
+\item Priority claims and overstatements removed from the abstract, highlights and conclusions.
+\item The surveys of control strategies and design tools moved to the appendix to make room for the new analyses. All result figures regenerated as vector graphics.
+\item The day-ahead dispatch now costs battery wear (0.068~USD per kWh discharged) and is solved by PSO followed by SQP from several starting points, including a load-following schedule (Section~7).
+\item Corrections from a full re-read: cross-references now point to the relevant appendices; the PSO update equations (Appendix~E) are written in the standard order; units in the diesel fuel model are stated correctly; remarks on solver speed in Section~2 and Appendix~E now match the benchmark; the statement that all normalized objectives lie between 0 and 1 is corrected (normalized LCOE and emissions exceed 1 for designs worse than the diesel baseline); and the description of REopt (Appendix~G) now reflects that it is free and open source.
+\item The decision-variable bounds were widened to 400 PV modules, 40 turbines and 400~kWh, because the corrected model's optimum lies beyond the original bound of 100 modules.
+\end{itemize}
+
+\end{document}
