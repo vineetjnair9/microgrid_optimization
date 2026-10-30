@@ -1,0 +1,11 @@
+=== L111_dispatch_lowres start 30-Oct-2026 13:26:43
+i_16kW               rule-based day 168: soc0=0.1147 DE_h=19 E_DE=122.41 kWh lost=0.000 kWh dump=0.00 kWh |load-base|max=0
+ii_8kW_16kWsizing    rule-based day 168: soc0=0.1009 DE_h=22 E_DE=108.41 kWh lost=10.758 kWh dump=0.00 kWh |load-base|max=0
+iii_8kW_8kWsizing    rule-based day 168: soc0=0.1060 DE_h=22 E_DE=107.12 kWh lost=10.734 kWh dump=0.00 kWh |load-base|max=0
+i_16kW               feas=1 J=0.4698 COE_n=0.7810 Em_n=0.5784 DPSP=0.0100 Dump=0.0000 REF=0.4802 COE=0.289 USD/kWh Em=81.1 kg DE_h=17 fuel=51.6 L flag=-2 (6.4s)
+ii_8kW_16kWsizing    feas=1 J=0.4392 COE_n=0.6568 Em_n=0.5798 DPSP=0.0098 Dump=0.0000 REF=0.4796 COE=0.243 USD/kWh Em=81.3 kg DE_h=21 fuel=43.2 L flag=2 (5.1s)
+iii_8kW_8kWsizing    feas=1 J=0.4357 COE_n=0.6562 Em_n=0.5714 DPSP=0.0100 Dump=0.0000 REF=0.4850 COE=0.243 USD/kWh Em=80.1 kg DE_h=19 fuel=41.5 L flag=2 (4.7s)
+load_peaky           feas=1 J=0.4414 COE_n=0.6673 Em_n=0.5792 DPSP=0.0097 Dump=0.0006 REF=0.4816 COE=0.247 USD/kWh Em=81.2 kg DE_h=24 fuel=45.1 L flag=2 (5.0s)
+load_shift           feas=1 J=0.4322 COE_n=0.6507 Em_n=0.5655 DPSP=0.0100 Dump=0.0000 REF=0.4876 COE=0.241 USD/kWh Em=79.3 kg DE_h=24 fuel=44.4 L flag=2 (4.7s)
+load_shift_curtail   feas=1 J=0.4066 COE_n=0.6288 Em_n=0.5284 DPSP=0.0100 Dump=0.0000 REF=0.5309 COE=0.244 USD/kWh Em=66.7 kg DE_h=19 fuel=36.6 L flag=2 (5.6s)
+=== L111_dispatch_lowres end 30-Oct-2026 13:27:17 (33.8 s) OK
